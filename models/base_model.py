@@ -1,46 +1,62 @@
 #!/usr/bin/python3
-"""
-The Base classe for AirBnB clone the console
-"""
+'''
+    This module defines the BaseModel class
+'''
 import uuid
 from datetime import datetime
+import models
 
 
-class BaseModel():
-    """
-    defines all common attributes/methods for other classes
-    """
+class BaseModel:
+    '''
+        Base class for other classes to be used for the duration.
+    '''
     def __init__(self, *args, **kwargs):
-        """Public instance attributes"""
-        if kwargs is not None and kwargs != {}:
-            for key in kwargs:
-                if key == "created_at":
-                    self.__dict__["created_at"] = datetime.strptime(
-                            kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
-                if key == "updated_at":
-                    self.__dict__["updated_at"] = datetime.strptime(
-                            kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
+        '''
+            Initialize public instance attributes.
+        '''
+        if (len(kwargs) == 0):
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
+        else:
+            kwargs["created_at"] = datetime.strptime(kwargs["created_at"],
+                                                     "%Y-%m-%dT%H:%M:%S.%f")
+            kwargs["updated_at"] = datetime.strptime(kwargs["updated_at"],
+                                                     "%Y-%m-%dT%H:%M:%S.%f")
+            for key, val in kwargs.items():
+                if "__class__" not in key:
+                    setattr(self, key, val)
 
     def __str__(self):
-        """str to print"""
-        class_name = self.__class__.__name__
-        return f"[{class_name}] ({self.id}) {self.__dict__}]"
+        '''
+            Return string representation of BaseModel class
+        '''
+        return ("[{}] ({}) {}".format(self.__class__.__name__,
+                                      self.id, self.__dict__))
+
+    def __repr__(self):
+        '''
+            Return string representation of BaseModel class
+        '''
+        return ("[{}] ({}) {}".format(self.__class__.__name__,
+                                      self.id, self.__dict__))
 
     def save(self):
-        """method that updates the public instance attributes
-        updated_at with the current date datetime"""
+        '''
+            Update the updated_at attribute with new.
+        '''
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
-        """
-        method the returns a dictionary conatining all
-        key/value of __dict__
-        """
-        new_dict = self.__dict__.copy()
-        new_dict["__class__"] = type(self).__name__
-        new_dict["created_at"] = new_dict["created_at"].isoformat()
-        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
-        return new_dict
+        '''
+            Return dictionary representation of BaseModel class.
+        '''
+        cp_dct = dict(self.__dict__)
+        cp_dct['__class__'] = self.__class__.__name__
+        cp_dct['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        cp_dct['created_at'] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+
+        return (cp_dct)
