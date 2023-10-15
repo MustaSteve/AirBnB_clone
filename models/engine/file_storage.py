@@ -1,19 +1,4 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
-"""
-class to serializes instances to JSON file and deserializes
-JSON file to instances
-"""
-import json
-from models.base_model import BaseModel
-
-
-class FileStorage():
-    """
-    all class attributes and instances methods to serialize and
-    deserialize fil
-    """
-=======
 '''a module to Store objects'''
 import os
 import json
@@ -26,41 +11,10 @@ class FileStorage:
     '''a class that serializes instances to a JSON file
 and deserializes JSON file to instances'''
 
->>>>>>> ed407161745b016a92e3b168f5cff3cf6c9ebef6
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
-<<<<<<< HEAD
-        """return the dictionary __objects"""
-        return self.__objects
-
-    def new(self, obj):
-        """method to set __objects with his key"""
-        key = "{}.{}".format(type(obj).__name__, obj.id)
-
-    def save(self):
-        """
-        serializes __objects to the JSON file
-        """
-        serialize = {}
-        for key, val in FileStoage.__objects.items():
-            serialize = val.to_dict()
-        with open(FileStorage.__file_path, 'w', encoding=UTF8) as fl:
-            json.dump(serialize, fl)
-
-    def reload(self):
-        """deserializes file JSON to __objects"""
-        try:
-            with open(FileStorage.__file_path, encoding="UTF8") as fl:
-                FileStorage.__objects.load(fl)
-            for k, v in FileStorage.__objects.items():
-                cl_name = v["__class__"]
-                cl_name = models.classes[cl_name]
-                FileStorage.__objects[key] = cl_name(**v)
-        except FileNotFoundError:
-            pass
-=======
         '''returns the dictionary __objects'''
         return FileStorage.__objects
 
@@ -108,4 +62,3 @@ and deserializes JSON file to instances'''
                         FileStorage.__objects[key] = obj
             except FileNotFoundError:
                 pass
->>>>>>> ed407161745b016a92e3b168f5cff3cf6c9ebef6
