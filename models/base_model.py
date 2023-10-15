@@ -18,7 +18,7 @@ class BaseModel():
                     self.__dict__["created_at"] = datetime.strptime(
                             kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
                 if key == "updated_at":
-                    self.__dict["updated_at"] = datetime.strptime(
+                    self.__dict__["updated_at"] = datetime.strptime(
                             kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
@@ -43,4 +43,4 @@ class BaseModel():
         new_dict["__class__"] = type(self).__name__
         new_dict["created_at"] = new_dict["created_at"].isoformat()
         new_dict["updated_at"] = new_dict["updated_at"].isoformat()
-        return mew_dict
+        return new_dict
