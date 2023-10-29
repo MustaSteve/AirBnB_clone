@@ -1,0 +1,176 @@
+.places {
+    margin-bottom: 50px;
+}
+.places h1{
+    text-align: start;
+    font-size: 30px;
+    margin-left: 20px;
+    max-width: 1000px;
+    margin-bottom: 0;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+article {
+    min-width: 390px;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    border: 1px #FF5A5F solid;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.places h2 {
+    margin: 0;
+}
+
+article h2 {
+    display: inline-block;
+    
+}
+.price_by_night {
+    color: #FF5A5F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 7px 3px 3px;
+    top: 10px;
+    right: 10px;
+    min-width: 65px;
+    height: 65px;
+    font-size: 30px;
+    border: #FF5A5F 4px solid;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.information {
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    height: 80px;
+    flex-direction: row;
+    margin: 40px auto 5px;
+}
+
+.information > div {
+    width: 130px;
+    border-top:#DDDDDD 1px solid;
+    border-bottom: #DDDDDD 1px solid;
+}
+
+.icon1, .icon2, .icon3 {
+    width: 50px;
+
+
+    margin: 5px auto;
+    height: 35px;
+}
+ .icon1 {
+    background: url("../images/icon_group.png");
+}
+
+.icon2 {
+    background: url("../images/icon_bed.png");
+}
+
+.icon3 {
+    background: url("../images/icon_bath.png");
+}
+
+.user {
+    width: 390px;
+}
+
+.user > p {
+    width: 390px;
+    text-align: start;
+}
+
+.user > p span {
+    font-weight: bold;
+}
+.description {
+    width: 390px;
+    text-align: start;
+}
+
+.amenities {
+    margin-top: 40px;
+}
+
+.amenities h2 {
+    width: 100%;
+    font-size: 16px;
+    text-align: start;
+    border-bottom:  #DDDDDD 1px solid
+
+}
+
+.amenities ul{
+    list-style: none;
+    text-align: start;
+}
+
+.amenities ul li{
+    position: relative;
+    line-height: 3;
+    margin-left: 20px;
+}
+.amenities .first::before {
+    content: url('../images/icon_wifi.png');
+    position: absolute;
+    left: -60px;
+    top: -15px;
+    margin-top: 5px;
+}
+
+.amenities .second::before {
+    content: url('../images/icon_tv.png');
+    position: absolute;
+    left: -60px;
+    top: -15px;
+    margin-top: 5px;
+}
+
+.amenities .third::before {
+    content: url('../images/icon_pets.png');
+    position: absolute;
+    left: -60px;
+    top: -15px;
+    margin-top: 5px;
+}
+
+.reviews {
+    margin-top: 40px;
+}
+
+.reviews h2 {
+    font-size: 16px;
+    width: 100%;
+    text-align: start;
+    border-bottom: #DDDDDD 1px solid;
+}
+
+.reviews ul {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.reviews ul h3,
+.reviews ul p {
+    width: 390px;
+    text-align: start;
+}

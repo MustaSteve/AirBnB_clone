@@ -1,0 +1,16 @@
+header{
+    position: relative;
+    background-color: #ffffff;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+}
+header div{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url('../images/logo.png');
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    left: 25px;
+  }

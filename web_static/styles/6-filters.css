@@ -1,0 +1,89 @@
+.filters {
+    background-color:white;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #DDDDDD;
+    border-radius:  4px;
+    align-items: center;
+    -webkit-border-radius:  4px;
+    -moz-border-radius:  4px;
+    -ms-border-radius:  4px;
+    -o-border-radius:  4px;
+}
+.filters button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    margin-right: 30px;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.filters button:hover {
+    opacity: 0.9;
+}
+
+.group{
+    width: calc((1000px + 1px) / 2);
+    height: 70px;
+    display: flex;
+    justify-content: start;
+    text-align: start;
+}
+
+.group div{
+    width: calc((1000px + 1px) / 4);
+    line-height: 0.5;
+}
+
+.popover1,
+.popover2 {
+    border: 1px solid #DDDDDD;
+    background-color: #FAFAFA;
+    width: calc((1000px + 1px) / 4);
+    height: 200px;
+    line-height: 1;
+    display: none;
+}
+
+.popover1 ul,
+.popover2 ul {
+    list-style: none;
+    line-height: 1.4;
+}
+
+.popover1 h2,
+.popover2 h2 {
+    padding: 0 20px;
+}
+
+.group h3 {
+    font-weight: 600;
+    padding: 0px 40px;
+
+}
+
+.group h4{
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0px 40px;
+}
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+.locations:hover .popover1{
+    display: block;
+}
+
+.amenitiess:hover .popover2{
+    display: block;
+}
